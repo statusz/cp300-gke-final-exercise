@@ -1,0 +1,7 @@
+gcloud preview container clusters create guestbook
+echo "guestbook foundation created"
+gcloud preview container kubectl create -f redis-master-pod.json
+gcloud preview container kubectl create -f redis-master-service.json
+gcloud preview container kubectl create -f redis-worker-controller.json
+gcloud preview container kubectl create -f redis-workers-service.json
+gcloud preview container kubectl create -f guestbook-controller.json
