@@ -1,10 +1,10 @@
 {
-  "id": "",
+  "id": "guestbook-controller",
   "kind": "ReplicationController",
   "apiVersion": "v1beta1",
   "desiredState": {
-    "replicas": X,
-    "replicaSelector": {"": ""},
+    "replicas": 3,
+    "replicaSelector": {"name": "guestbook"},
     "podTemplate": {
       "desiredState": {
         "manifest": {
@@ -19,8 +19,8 @@
           }]
         }
       },
-      "labels": { "": "" }
+      "labels": { "name": "guestbook" }
     }
   },
-  "labels": {"": ""}
+  "labels": {"name": "guestbook"}
 }

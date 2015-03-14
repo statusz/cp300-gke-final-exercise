@@ -1,10 +1,10 @@
 {
-  "id": "",
+  "id": "redis-worker-controller",
   "kind": "ReplicationController",
   "apiVersion": "v1beta1",
   "desiredState": {
-    "replicas": X,
-    "replicaSelector": {"": "", "": ""},
+    "replicas": 2,
+    "replicaSelector": {"name": "redis", "role": "worker"},
     "podTemplate": {
       "desiredState": {
         "manifest": {
@@ -18,8 +18,8 @@
           }]
         }
       },
-      "labels": { "": "", "": "" }
+      "labels": { "name": "redis", "role": "worker" }
     }
   },
-  "labels": { "": "", "": "" }
+  "labels": { "name": "redis", "role": "worker" }
 }
