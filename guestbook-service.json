@@ -1,10 +1,23 @@
 {
-  "id": "",
   "kind": "Service",
-  "apiVersion": "v1beta1",
-  "port": X,
-  "containerPort": "http-server",
-  "selector": { "": "" },
-  "labels": { "": "" },
-  "createExternalLoadBalancer": X
+  "apiVersion": "v1beta3",
+  "metadata": {
+    "name": "",
+    "labels": {
+      "": ""
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "protocol": "TCP",
+        "port": X,
+        "targetPort": X
+      }
+    ],
+    "selector": {
+      "": ""
+    },
+    "createExternalLoadBalancer": X
+  }
 }

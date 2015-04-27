@@ -1,25 +1,45 @@
 {
-  "id": "",
   "kind": "ReplicationController",
-  "apiVersion": "v1beta1",
-  "desiredState": {
-    "replicas": X,
-    "replicaSelector": {"": "", "": ""},
-    "podTemplate": {
-      "desiredState": {
-        "manifest": {
-          "version": "v1beta1",
-          "id": "redis-worker-controller",
-          "containers": [{
-            "name": "redis-worker",
-            "image": "brendanburns/redis-slave",
-            "cpu": 100,
-            "ports": [{"name": "redis-server", "containerPort": 6379, "hostPort": 6380}]
-          }]
-        }
-      },
-      "labels": { "": "", "": "" }
+  "apiVersion": "v1beta3",
+  "metadata": {
+    "name": "",
+    "labels": {
+      "": "",
+      "": ""
     }
   },
-  "labels": { "": "", "": "" }
+  "spec": {
+    "replicas": 0,
+    "selector": {
+      "": "",
+      "": ""
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "": "",
+          "": ""
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "redis-worker",
+            "image": "kubernetes/redis-slave:v2",
+            "ports": [
+              {
+                "containerPort": 6379,
+                "protocol": "TCP"
+              }
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "100m"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
 }

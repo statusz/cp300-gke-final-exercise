@@ -1,20 +1,30 @@
 {
-  "id": "",
   "kind": "Pod",
-  "apiVersion": "v1beta1",
-  "desiredState": {
-    "manifest": {
-      "version": "v1beta1",
-      "id": "",
-      "containers": [{
-        "name": "",
-        "image": "",
-        "cpu": 100,
-        "ports": [{ "name": "redis-server", "containerPort": 6379 }]
-      }]
+  "apiVersion": "v1beta3",
+  "metadata": {
+    "name": "",
+    "labels": {
+      "": "",
+      "": ""
     }
   },
-  "labels": {
-    "": "", "": ""
+  "spec": {
+    "containers": [
+      {
+        "name": "",
+        "image": "",
+        "ports": [
+          {
+            "containerPort": 6379,
+            "protocol": "TCP"
+          }
+        ],
+        "resources": {
+          "limits": {
+            "cpu": "100m"
+          }
+        }
+      }
+    ]
   }
 }

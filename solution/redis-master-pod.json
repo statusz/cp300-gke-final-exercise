@@ -1,20 +1,30 @@
 {
-  "id": "redis-master",
   "kind": "Pod",
-  "apiVersion": "v1beta1",
-  "desiredState": {
-    "manifest": {
-      "version": "v1beta1",
-      "id": "redis-master",
-      "containers": [{
-        "name": "master",
-        "image": "dockerfile/redis",
-        "cpu": 100,
-        "ports": [{ "name": "redis-server", "containerPort": 6379 }]
-      }]
+  "apiVersion": "v1beta3",
+  "metadata": {
+    "name": "redis-master",
+    "labels": {
+      "name": "redis",
+      "role": "master"
     }
   },
-  "labels": {
-    "name": "redis", "role": "master"
+  "spec": {
+    "containers": [
+      {
+        "name": "master",
+        "image": "redis",
+        "ports": [
+          {
+            "containerPort": 6379,
+            "protocol": "TCP"
+          }
+        ],
+        "resources": {
+          "limits": {
+            "cpu": "100m"
+          }
+        }
+      }
+    ]
   }
 }
