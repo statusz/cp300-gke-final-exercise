@@ -1,43 +1,26 @@
 {
-  "kind": "ReplicationController",
-  "apiVersion": "v1beta3",
-  "metadata": {
-    "name": "",
-    "labels": {
-      "": ""
-    }
-  },
-  "spec": {
-    "replicas": 0,
-    "selector": {
-      "": ""
-    },
-    "template": {
-      "metadata": {
-        "labels": {
-          "": ""
-        }
-      },
-      "spec": {
-        "containers": [
-          {
-            "name": "php-redis",
-            "image": "kubernetes/example-guestbook-php-redis:v2",
-            "ports": [
-              {
-                "containerPort": X,
-                "protocol": "TCP"
+   "kind":"ReplicationController",
+   "apiVersion":"v1beta3",
+   "metadata":{
+      "name":"",
+      "labels":{ "name":"" }
+   },
+   "spec":{
+      "replicas":X,
+      "selector":{ "name":"" },
+      "template":{
+         "metadata":{
+            "labels":{ "name":"" }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "name":"",
+                  "image":"",
+                  "ports":[{ "containerPort":X }]
               }
-            ],
-            "resources": {
-              "limits": {
-                "cpu": "100m",
-                "memory": "50000000"
-              }
-            }
+            ]
           }
-        ]
-      }
+        }
     }
-  }
 }

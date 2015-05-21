@@ -1,23 +1,18 @@
 {
-  "kind": "Service",
-  "apiVersion": "v1beta3",
-  "metadata": {
-    "name": "guestbook",
-    "labels": {
-      "name": "guestbook"
-    }
-  },
-  "spec": {
-    "ports": [
-      {
-        "protocol": "TCP",
-        "port": 3000,
-        "targetPort": 80
-      }
-    ],
-    "selector": {
-      "name": "guestbook"
-    },
-    "createExternalLoadBalancer": true
+   "kind":"Service",
+   "apiVersion":"v1beta3",
+   "metadata":{
+      "name":"frontend",
+      "labels":{ "name":"frontend" }
+   },
+   "spec":{
+      "ports": [
+        {
+          "port":80,
+          "targetPort":80
+        }
+      ],
+      "selector":{ "name":"frontend" },
+      "createExternalLoadBalancer": true
   }
 }

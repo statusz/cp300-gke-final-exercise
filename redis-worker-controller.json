@@ -1,45 +1,26 @@
 {
-  "kind": "ReplicationController",
-  "apiVersion": "v1beta3",
-  "metadata": {
-    "name": "",
-    "labels": {
-      "": "",
-      "": ""
-    }
-  },
-  "spec": {
-    "replicas": 0,
-    "selector": {
-      "": "",
-      "": ""
-    },
-    "template": {
-      "metadata": {
-        "labels": {
-          "": "",
-          "": ""
+   "kind":"ReplicationController",
+   "apiVersion":"v1beta3",
+   "metadata":{
+      "name":"",
+      "labels":{ "name":"" }
+   },
+   "spec":{
+      "replicas":X,
+      "selector":{ "name":"" },
+      "template":{
+         "metadata":{
+            "labels":{ "name":"" }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "name":"",
+                  "image":"",
+                  "ports":[{ "containerPort":X }]
+                }
+            ]
         }
-      },
-      "spec": {
-        "containers": [
-          {
-            "name": "redis-worker",
-            "image": "kubernetes/redis-slave:v2",
-            "ports": [
-              {
-                "containerPort": 6379,
-                "protocol": "TCP"
-              }
-            ],
-            "resources": {
-              "limits": {
-                "cpu": "100m"
-              }
-            }
-          }
-        ]
       }
-    }
   }
 }

@@ -1,23 +1,18 @@
 {
-  "kind": "Service",
-  "apiVersion": "v1beta3",
-  "metadata": {
-    "name": "",
-    "labels": {
-      "": ""
-    }
-  },
-  "spec": {
-    "ports": [
-      {
-        "protocol": "TCP",
-        "port": X,
-        "targetPort": X
-      }
-    ],
-    "selector": {
-      "": ""
-    },
-    "createExternalLoadBalancer": X
+   "kind":"Service",
+   "apiVersion":"v1beta3",
+   "metadata":{
+      "name":"",
+      "labels":{ "name":"" }
+   },
+   "spec":{
+      "ports": [
+        {
+          "port":X,
+          "targetPort":X
+        }
+      ],
+      "selector":{ "name":"" },
+      "createExternalLoadBalancer": X
   }
 }
