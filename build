@@ -6,5 +6,5 @@ gcloud alpha container kubectl create -f redis-worker-controller.json
 gcloud alpha container kubectl create -f redis-worker-service.json
 gcloud alpha container kubectl create -f guestbook-controller.json
 gcloud alpha container kubectl create -f guestbook-service.json
-gcloud compute firewall-rules create guestbook-node-3000 \
-    --allow=tcp:3000 --target-tags k8s-guestbook-node
+gcloud compute firewall-rules create guestbook-node-80 \
+    --allow=tcp:80 --target-tags k8s-guestbook-node
